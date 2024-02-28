@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="patient_1" model="patient">
+        <field name="name">Ivan</field>
+        <field name="second_name">Ivanov</field>
+        <field name="age">42</field>
+        <field name="gender">male</field>
+    </record>
+
+    <record id="patient_2" model="patient">
+        <field name="name">Rivan</field>
+        <field name="second_name">Rivanov</field>
+        <field name="age">43</field>
+        <field name="gender">female</field>
+    </record>
+
+    <record id="patient_3" model="patient">
+        <field name="name">Evran</field>
+        <field name="second_name">Evranov</field>
+        <field name="age">44</field>
+        <field name="gender">others</field>
+    </record>
+</odoo>
