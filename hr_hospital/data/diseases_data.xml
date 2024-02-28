@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="diseases_1" model="diseases">
+        <field name="name">Angina</field>
+        <field name="description">AnginaAngina</field>
+    </record>
+
+    <record id="diseases_2" model="diseases">
+        <field name="name">Grup</field>
+        <field name="description">GrupGrup</field>
+    </record>
+
+    <record id="diseases_3" model="diseases">
+        <field name="name">Perelom</field>
+        <field name="description">PerelomPerelom</field>
+    </record>
+</odoo>
