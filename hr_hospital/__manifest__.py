@@ -1,9 +1,8 @@
 {
     'name': "my_hospital",
-    'description': "for clients and doctors",
 
     'author': "YevdokimovA",
-    'website': "https//:yevdokimova.com",
+    'website': "https://yevdokimova.com",
 
     'category': "Customization",
     'license': "OPL-1",

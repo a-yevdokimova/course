@@ -8,5 +8,5 @@ class Diseases(models.Model):
     _name = "diseases"
     _description = "Diseases"
 
-    name = fields.Char(string='Name', required=True, tracking=True)
-    description = fields.Text(string='Description')
+    name = fields.Char(required=True, tracking=True)
+    description = fields.Text()

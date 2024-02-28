@@ -40,5 +40,4 @@
         parent="hr_hospital_menu"
         name="Diseases"
         sequence="10"/>
-
 </odoo>

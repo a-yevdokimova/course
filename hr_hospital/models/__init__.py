@@ -1,1 +1,1 @@
-from . import patient, doctor, diseases,patients_visits
+from . import patient, doctor, diseases, patients_visits

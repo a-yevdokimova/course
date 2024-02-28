@@ -8,5 +8,5 @@ class PatipatientsVisits(models.Model):
     _name = "patient.visits"
     _description = "Patients Visits"
 
-    number = fields.Integer(string='Number')
-    description = fields.Text(string='Description')
+    number = fields.Integer()
+    description = fields.Text()
