@@ -9,10 +9,14 @@
                 <sheet>
                     <group>
                         <group>
-                        <field name="name"/>
-                        <field name="second_name"/>
-                        <field name="age"/>
-                        <field name="gender"/>
+                            <field name="name"/>
+                            <field name="second_name"/>
+                            <field name="age"/>
+                            <field name="gender"/>
+                            <field name="specialty"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="image" widget="image"/>
                         </group>
                         <notebook>
                             <page string="my notebook">
@@ -34,6 +38,10 @@
                 <field name="second_name"/>
                 <field name="age"/>
                 <field name="gender"/>
+                <field name="specialty"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="image" widget="image"/>
             </tree>
         </field>
     </record>
@@ -47,9 +55,9 @@
     </record>
 
     <menuitem id="doctor_menu"
-        action="doctor_act_window"
-        parent="hr_hospital_menu"
-        name="Doctor"
-        sequence="10"/>
+              action="doctor_act_window"
+              parent="hr_hospital_menu"
+              name="Doctor"
+              sequence="10"/>
 
 </odoo>

@@ -14,9 +14,10 @@
         'views/menu_views.xml',
         'views/patient_views.xml',
         'views/doctor_views.xml',
-        'views/diseases_views.xml',
+        'views/disease_views.xml',
         'views/patient_visits_views.xml',
-        'data/diseases_data.xml',
+        'views/diagnosis_views.xml',
+        'data/disease_data.xml',
     ],
     'demo': [
         'demo/doctor_demo.xml',

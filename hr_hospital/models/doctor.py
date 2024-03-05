@@ -7,6 +7,8 @@ _logger = logging.getLogger(__name__)
 class Doctor(models.Model):
     _name = "doctor"
     _description = "Doctors Records"
+    _inherit = "person"
+
 
     name = fields.Char(required=True, tracking=True)
     second_name = fields.Char(required=True,
@@ -16,3 +18,4 @@ class Doctor(models.Model):
                                ('female', 'Female'),
                                ('others', 'Others')],
                               tracking=True)
+    specialty = fields.Char()

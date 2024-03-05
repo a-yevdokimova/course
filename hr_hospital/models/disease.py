@@ -5,8 +5,8 @@ _logger = logging.getLogger(__name__)
 
 
 class Diseases(models.Model):
-    _name = "diseases"
-    _description = "Diseases"
+    _name = "disease"
+    _description = "Disease"
 
     name = fields.Char(required=True, tracking=True)
     description = fields.Text()
