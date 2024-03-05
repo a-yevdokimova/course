@@ -15,13 +15,18 @@
         parent="hr_hospital_menu"
         sequence="10"/>
 
-    <menuitem id="diseases_menu"
-        name="Diseases"
+    <menuitem id="disease_menu"
+        name="Disease"
         parent="hr_hospital_menu"
         sequence="10"/>
 
     <menuitem id="patient_visits_menu"
         name="Patient Visits"
+        parent="hr_hospital_menu"
+        sequence="10"/>
+
+    <menuitem id="diagnosis_menu"
+        name="Diagnosis"
         parent="hr_hospital_menu"
         sequence="10"/>
 </odoo>
