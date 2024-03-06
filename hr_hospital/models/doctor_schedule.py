@@ -8,7 +8,7 @@ class DoctorSchedule(models.Model):
     _name = "doctor.schedule"
     _description = "Doctor`s Schedule"
 
-    doctor_id = fields.Many2one(string='Personal doctor', comodel_name='doctor')
+    doctor_id = fields.Many2one(comodel_name='doctor')
     appointment_date = fields.Date()
     appointment_time = fields.Float(string='Appointment Time', required=True)
 

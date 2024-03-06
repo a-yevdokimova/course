@@ -13,6 +13,8 @@
                         <field name="doctor_id"/>
                         <field name="patient_id"/>
                         <field name="diagnosis_ids"/>
+                        <field name="appointment_id"/>
+                        <field name="is_appointment_done"/>
                     </group>
                 </sheet>
             </form>
@@ -24,10 +26,13 @@
         <field name="model">patient.visits</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="active" invisible="1"/>
                 <field name="visit_date"/>
                 <field name="doctor_id"/>
                 <field name="patient_id"/>
                 <field name="diagnosis_ids"/>
+                <field name="appointment_id"/>
+                <field name="is_appointment_done"/>
             </tree>
         </field>
     </record>

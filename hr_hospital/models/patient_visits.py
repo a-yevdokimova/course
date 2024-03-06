@@ -14,6 +14,15 @@ class PatientsVisit(models.Model):
     patient_id = fields.Many2one(comodel_name='patient')
     diagnosis_ids = fields.One2many('diagnosis', 'visit_id', string='Diagnoses')
     active = fields.Boolean(default=True)
+    appointment_id = fields.Many2one('doctor.schedule')
+    is_appointment_done = fields.Boolean(string="Is the appointment done?")
+
+    @api.constrains('appointment_id')
+    def _check_unique_appointment(self):
+        for visit in self:
+            if visit.appointment_id and self.search_count(
+                    [('id', '!=', visit.id), ('appointment_id', '=', visit.appointment_id.id)]):
+                raise ValidationError("You cannot schedule two visits for the same appointment!")
 
     def write(self, vals):
         if 'visit_date' in vals or 'doctor_id' in vals:
