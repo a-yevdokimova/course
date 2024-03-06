@@ -17,9 +17,13 @@ class PatientsVisit(models.Model):
 
     def write(self, vals):
         if 'visit_date' in vals or 'doctor_id' in vals:
-            for visit in self:
-                if visit.visit_date and visit.visit_date < fields.Datetime.now():
+            for visits in self:
+                if visits.visit_date and visits.visit_date < fields.Datetime.now():
                     raise ValidationError("You cannot change visit date/time or doctor for a visit that has already occurred!")
+        if 'active' in vals and not vals['active']:
+            visits_with_diagnoses = self.filtered(lambda visit: visit.diagnosis_ids)
+            if visits_with_diagnoses:
+                raise ValidationError("You cannot archive visits with diagnoses.")
         return super(PatientsVisit, self).write(vals)
 
     def unlink(self):
@@ -28,9 +32,9 @@ class PatientsVisit(models.Model):
             raise ValidationError("You cannot delete visits with diagnoses.")
         return super(PatientsVisit, self).unlink()
 
-    def write(self, vals):
-        if 'active' in vals and not vals['active']:
-            visits_with_diagnoses = self.filtered(lambda visit: visit.diagnosis_ids)
-            if visits_with_diagnoses:
-                raise ValidationError("You cannot archive visits with diagnoses.")
-        return super(PatientsVisit, self).write(vals)
+    # def write(self, vals):
+    #     if 'active' in vals and not vals['active']:
+    #         visits_with_diagnoses = self.filtered(lambda visit: visit.diagnosis_ids)
+    #         if visits_with_diagnoses:
+    #             raise ValidationError("You cannot archive visits with diagnoses.")
+    #     return super(PatientsVisit, self).write(vals)

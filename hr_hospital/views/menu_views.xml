@@ -34,4 +34,9 @@
         name="History Change"
         parent="patient_menu"
         sequence="10"/>
+
+    <menuitem id="doctor_schedule_menu"
+        name="Doctor Schedule"
+        parent="doctor_menu"
+        sequence="10"/>
 </odoo>
