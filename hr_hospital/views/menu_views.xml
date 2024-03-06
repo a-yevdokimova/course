@@ -17,16 +17,21 @@
 
     <menuitem id="disease_menu"
         name="Disease"
-        parent="hr_hospital_menu"
+        parent="doctor_menu"
         sequence="10"/>
 
     <menuitem id="patient_visits_menu"
         name="Patient Visits"
-        parent="hr_hospital_menu"
+        parent="patient_menu"
         sequence="10"/>
 
     <menuitem id="diagnosis_menu"
         name="Diagnosis"
-        parent="hr_hospital_menu"
+        parent="doctor_menu"
+        sequence="10"/>
+
+    <menuitem id="history_change_menu"
+        name="History Change"
+        parent="patient_menu"
         sequence="10"/>
 </odoo>

@@ -42,7 +42,7 @@
 
     <menuitem id="patient_visits_menu"
               action="patient_visits_act_window"
-              parent="hr_hospital_menu"
+              parent="patient_menu"
               name="Patient Visits"
               sequence="10"/>
 

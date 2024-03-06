@@ -37,7 +37,7 @@
 
     <menuitem id="disease_menu"
         action="disease_act_window"
-        parent="hr_hospital_menu"
+        parent="doctor_menu"
         name="Disease"
         sequence="10"/>
 </odoo>

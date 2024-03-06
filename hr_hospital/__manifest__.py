@@ -17,6 +17,7 @@
         'views/disease_views.xml',
         'views/patient_visits_views.xml',
         'views/diagnosis_views.xml',
+        'views/history_change_views.xml',
         'data/disease_data.xml',
     ],
     'demo': [

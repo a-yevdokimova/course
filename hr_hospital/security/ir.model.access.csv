@@ -4,3 +4,4 @@ hr_hospital.access_doctor,access_doctor,hr_hospital.model_doctor,base.group_user
 hr_hospital.access_disease,access_disease,hr_hospital.model_disease,base.group_user,1,1,1,1
 hr_hospital.access_patient_visits,access_patient_visits,hr_hospital.model_patient_visits,base.group_user,1,1,1,1
 hr_hospital.access_diagnosis,access_diagnosis,hr_hospital.model_diagnosis,base.group_user,1,1,1,1
+hr_hospital.access_history_change,access_history_change,hr_hospital.model_history_change,base.group_user,1,1,1,1
