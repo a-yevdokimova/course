@@ -25,6 +25,7 @@
     'demo': [
         'demo/doctor_demo.xml',
         'demo/patient_demo.xml',
+        'demo/disease_demo.xml',
     ],
 
     'installable': True,
