@@ -11,17 +11,21 @@
     'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',
+        'wizard/change_doctor_wizard_views.xml',
         'views/menu_views.xml',
         'views/patient_views.xml',
         'views/doctor_views.xml',
         'views/disease_views.xml',
         'views/patient_visits_views.xml',
         'views/diagnosis_views.xml',
+        'views/history_change_views.xml',
+        'views/doctor_schedule_views.xml',
         'data/disease_data.xml',
     ],
     'demo': [
         'demo/doctor_demo.xml',
         'demo/patient_demo.xml',
+        'demo/disease_demo.xml',
     ],
 
     'installable': True,

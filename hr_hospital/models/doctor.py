@@ -9,7 +9,6 @@ class Doctor(models.Model):
     _description = "Doctors Records"
     _inherit = "person"
 
-
     name = fields.Char(required=True, tracking=True)
     second_name = fields.Char(required=True,
                               tracking=True)
@@ -19,3 +18,6 @@ class Doctor(models.Model):
                                ('others', 'Others')],
                               tracking=True)
     specialty = fields.Char()
+    doctor_role = fields.Selection([
+        ('intern', 'Intern'),
+        ('mentor', 'Doctor Mentor')])

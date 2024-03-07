@@ -46,7 +46,6 @@
         </field>
     </record>
 
-
     <record id="patient_act_window" model="ir.actions.act_window">
         <field name="name">Patient</field>
         <field name="type">ir.actions.act_window</field>

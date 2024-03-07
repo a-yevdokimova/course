@@ -18,7 +18,8 @@ class Patient(models.Model):
                                ('female', 'Female'),
                                ('others', 'Others')],
                               tracking=True)
-    doctor_id = fields.Many2one(string='Personal doctor', comodel_name='doctor')
+    doctor_id = fields.Many2one(string='Personal doctor', comodel_name='doctor',
+                                domain="[('doctor_role', '!=', 'intern')]")
     birthday = fields.Date(string='Date of Birth')
     age = fields.Integer(compute='_compute_age')
     passport = fields.Char()

@@ -5,28 +5,38 @@
         name="Hospital"
         sequence="10"/>
 
-    <menuitem id="patient_menu"
-        name="Patient"
-        parent="hr_hospital_menu"
-        sequence="10"/>
+<!--    <menuitem id="patient_menu"-->
+<!--        name="Patient"-->
+<!--        parent="hr_hospital_menu"-->
+<!--        sequence="10"/>-->
 
-    <menuitem id="doctor_menu"
-        name="Doctor"
-        parent="hr_hospital_menu"
-        sequence="10"/>
+<!--    <menuitem id="doctor_menu"-->
+<!--        name="Doctor"-->
+<!--        parent="hr_hospital_menu"-->
+<!--        sequence="10"/>-->
 
-    <menuitem id="disease_menu"
-        name="Disease"
-        parent="hr_hospital_menu"
-        sequence="10"/>
+<!--    <menuitem id="disease_menu"-->
+<!--        name="Disease"-->
+<!--        parent="doctor_menu"-->
+<!--        sequence="10"/>-->
 
-    <menuitem id="patient_visits_menu"
-        name="Patient Visits"
-        parent="hr_hospital_menu"
-        sequence="10"/>
+<!--    <menuitem id="patient_visits_menu"-->
+<!--        name="Patient Visits"-->
+<!--        parent="patient_menu"-->
+<!--        sequence="10"/>-->
 
-    <menuitem id="diagnosis_menu"
-        name="Diagnosis"
-        parent="hr_hospital_menu"
-        sequence="10"/>
+<!--    <menuitem id="diagnosis_menu"-->
+<!--        name="Diagnosis"-->
+<!--        parent="doctor_menu"-->
+<!--        sequence="10"/>-->
+
+<!--    <menuitem id="history_change_menu"-->
+<!--        name="History Change"-->
+<!--        parent="patient_menu"-->
+<!--        sequence="10"/>-->
+
+<!--    <menuitem id="doctor_schedule_menu"-->
+<!--        name="Doctor Schedule"-->
+<!--        parent="doctor_menu"-->
+<!--        sequence="10"/>-->
 </odoo>
