@@ -56,10 +56,4 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="doctor_menu"
-              action="doctor_act_window"
-              parent="hr_hospital_menu"
-              name="Doctor"
-              sequence="10"/>
-
 </odoo>

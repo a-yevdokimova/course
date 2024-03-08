@@ -9,9 +9,6 @@ class Doctor(models.Model):
     _description = "Doctors Records"
     _inherit = "person"
 
-    name = fields.Char(required=True, tracking=True)
-    second_name = fields.Char(required=True,
-                              tracking=True)
     age = fields.Integer(racking=True)
     gender = fields.Selection([('male', 'Male'),
                                ('female', 'Female'),

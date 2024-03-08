@@ -35,9 +35,4 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="disease_menu"
-        action="disease_act_window"
-        parent="doctor_menu"
-        name="Disease"
-        sequence="10"/>
 </odoo>

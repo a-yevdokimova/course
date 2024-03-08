@@ -10,3 +10,4 @@ class Diseases(models.Model):
 
     name = fields.Char(required=True, tracking=True)
     description = fields.Text()
+    parent_id = fields.Many2one(comodel_name='disease')

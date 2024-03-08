@@ -37,10 +37,4 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="history_change_menu"
-              action="history_change_act_window"
-              parent="patient_menu"
-              name="History Change"
-              sequence="10"/>
-
 </odoo>

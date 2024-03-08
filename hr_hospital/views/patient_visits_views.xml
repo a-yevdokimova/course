@@ -45,10 +45,4 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="patient_visits_menu"
-              action="patient_visits_act_window"
-              parent="patient_menu"
-              name="Patient Visits"
-              sequence="10"/>
-
 </odoo>
