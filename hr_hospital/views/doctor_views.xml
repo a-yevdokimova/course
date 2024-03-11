@@ -11,10 +11,11 @@
                         <group>
                             <field name="name"/>
                             <field name="second_name"/>
-                            <field name="doctor_role" widget="radio" options="{'horizontal': true}"/>
                             <field name="age"/>
                             <field name="gender"/>
                             <field name="specialty"/>
+                            <field name="is_intern"/>
+                            <field name="mentor_id" invisible="not is_intern"/>
                             <field name="phone"/>
                             <field name="email"/>
                             <field name="image" widget="image"/>
@@ -37,10 +38,11 @@
             <tree>
                 <field name="name"/>
                 <field name="second_name"/>
-                <field name="doctor_role" widget="radio" options="{'horizontal': true}"/>
                 <field name="age"/>
                 <field name="gender"/>
                 <field name="specialty"/>
+                <field name="is_intern"/>
+                <field name="mentor_id" invisible="not is_intern"/>
                 <field name="phone"/>
                 <field name="email"/>
                 <field name="image" widget="image"/>

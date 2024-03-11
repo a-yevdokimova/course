@@ -1,5 +1,5 @@
 import logging
-from odoo import fields, models, api
+from odoo import fields, models, api, _
 from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
@@ -9,20 +9,31 @@ class PatientsVisit(models.Model):
     _name = "patient.visits"
     _description = "Patients Visits"
 
-    visit_date = fields.Datetime()
+    visit_status = fields.Selection([('scheduled', 'Scheduled'),
+                               ('completed', 'Completed'),
+                               ('cancelled', 'Cancelled')],
+                                tracking=True)
+    visit_date = fields.Datetime(string='The planned date and time of the visit')
+    visit_done_date = fields.Datetime(string='Date and time when the visit took place')
     doctor_id = fields.Many2one(comodel_name='doctor')
     patient_id = fields.Many2one(comodel_name='patient')
     diagnosis_ids = fields.One2many('diagnosis', 'visit_id', string='Diagnoses')
     active = fields.Boolean(default=True)
-    appointment_id = fields.Many2one('doctor.schedule')
-    is_appointment_done = fields.Boolean(string="Is the appointment done?")
+    confirmation = fields.Boolean(string='Confirmation from doctor-mentor')
+    # appointment_id = fields.Many2one('doctor.schedule')
+    # is_appointment_done = fields.Boolean(string="Is the appointment done?")
 
-    @api.constrains('appointment_id')
-    def _check_unique_appointment(self):
-        for visit in self:
-            if visit.appointment_id and self.search_count(
-                    [('id', '!=', visit.id), ('appointment_id', '=', visit.appointment_id.id)]):
-                raise ValidationError("You cannot schedule two visits for the same appointment!")
+    @api.constrains('visit_date', 'doctor_id')
+    def _check_unique_doctor_visit(self):
+        for record in self:
+            if record.visit_date and record.doctor_id:
+                existing_record = self.env['patient.visits'].search([
+                    ('visit_date', '=', record.visit_date),
+                    ('doctor_id', '=', record.doctor_id.id),
+                    ('id', '!=', record.id),
+                ])
+                if existing_record:
+                    raise ValidationError('A visit to this doctor on this date already exists!')
 
     def write(self, vals):
         if 'visit_date' in vals or 'doctor_id' in vals:
