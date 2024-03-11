@@ -9,15 +9,15 @@ class Doctor(models.Model):
     _description = "Doctors Records"
     _inherit = "person"
 
-    name = fields.Char(required=True, tracking=True)
-    second_name = fields.Char(required=True,
-                              tracking=True)
     age = fields.Integer(racking=True)
     gender = fields.Selection([('male', 'Male'),
                                ('female', 'Female'),
                                ('others', 'Others')],
                               tracking=True)
-    specialty = fields.Char()
-    doctor_role = fields.Selection([
-        ('intern', 'Intern'),
-        ('mentor', 'Doctor Mentor')])
+    specialty = fields.Selection([('cardiology', 'Cardiology'),
+                                  ('neurology', 'Neurology'),
+                                  ('ophthalmology', 'Ophthalmology')],
+                                 tracking=True)
+    is_intern = fields.Boolean(string='Intern')
+    mentor_id = fields.Many2one('doctor', string='Doctor Mentor', domain="[('is_intern', '!=', True)]")
+

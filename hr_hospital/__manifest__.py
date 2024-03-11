@@ -11,8 +11,8 @@
     'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',
+        'views/hr_hospital_menus_views.xml',
         'wizard/change_doctor_wizard_views.xml',
-        'views/menu_views.xml',
         'views/patient_views.xml',
         'views/doctor_views.xml',
         'views/disease_views.xml',

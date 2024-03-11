@@ -9,9 +9,8 @@
                 <sheet>
                     <group>
                         <field name="visit_id"/>
-                        <field name="doctor_id"/>
-                        <field name="patient_id"/>
                         <field name="disease_id"/>
+                        <field name="approved"/>
                         <field name="appointment"/>
                     </group>
                 </sheet>
@@ -25,9 +24,8 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="visit_id"/>
-                <field name="doctor_id"/>
-                <field name="patient_id"/>
                 <field name="disease_id"/>
+                <field name="approved"/>
                 <field name="appointment"/>
             </tree>
         </field>
@@ -41,9 +39,4 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="diagnosis_menu"
-              action="diagnosis_act_window"
-              parent="doctor_menu"
-              name="Diagnosis"
-              sequence="10"/>
 </odoo>

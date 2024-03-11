@@ -17,6 +17,7 @@
                             <field name="birthday"/>
                             <field name="age"/>
                             <field name="passport"/>
+                            <field name="contact_person"/>
                         </group>
                         <notebook>
                             <page string="my notebook">
@@ -42,6 +43,7 @@
                 <field name="birthday"/>
                 <field name="age"/>
                 <field name="passport"/>
+                <field name="contact_person"/>
             </tree>
         </field>
     </record>
@@ -52,11 +54,5 @@
         <field name="res_model">patient</field>
         <field name="view_mode">tree,form</field>
     </record>
-
-    <menuitem id="patient_menu"
-              action="patient_act_window"
-              parent="hr_hospital_menu"
-              name="Patient"
-              sequence="10"/>
 
 </odoo>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="hr_hospital_menu"
+        name="Hospital"
+        sequence="10"/>
+
+    <menuitem id="patient_menu"
+              action="patient_act_window"
+              parent="hr_hospital_menu"
+              name="Patient"
+              sequence="10"/>
+
+    <menuitem id="doctor_list_menu"
+              action="doctor_act_window"
+              parent="hr_hospital_menu"
+              name="Doctors"
+              sequence="20"/>
+
+    <menuitem id="doctor_menu"
+        name="Doctor Data"
+        parent="hr_hospital_menu"
+        sequence="30"/>
+
+    <menuitem id="disease_menu"
+        action="disease_act_window"
+        parent="doctor_menu"
+        name="Disease"
+        sequence="40"/>
+
+    <menuitem id="patient_visits_menu"
+              action="patient_visits_act_window"
+              parent="patient_menu"
+              name="Patient Visits"
+              sequence="50"/>
+
+    <menuitem id="diagnosis_menu"
+              action="diagnosis_act_window"
+              parent="doctor_menu"
+              name="Diagnosis"
+              sequence="60"/>
+
+    <menuitem id="history_change_menu"
+              action="history_change_act_window"
+              parent="patient_menu"
+              name="History Change"
+              sequence="70"/>
+
+    <menuitem id="doctor_schedule_menu"
+              action="doctor_schedule_act_window"
+              parent="doctor_menu"
+              name="Doctor Schedule"
+              sequence="80"/>
+
+    <record id="menu_change_doctor_wizard" model="ir.ui.menu">
+        <field name="name">Change doctor</field>
+        <field name="parent_id" ref="hr_hospital.patient_menu"/>
+        <field name="action" ref="server_action_change_doctor_wizard"/>
+        <field name="sequence" eval="5"/>
+    </record>
+</odoo>

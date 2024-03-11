@@ -9,20 +9,19 @@ _logger = logging.getLogger(__name__)
 class Patient(models.Model):
     _name = "patient"
     _description = "Patients Records"
+    _inherit = "person"
 
-    name = fields.Char(required=True, tracking=True)
-    second_name = fields.Char(required=True,
-                              tracking=True)
     is_child = fields.Boolean("Is Child ?", tracking=True)
     gender = fields.Selection([('male', 'Male'),
                                ('female', 'Female'),
                                ('others', 'Others')],
                               tracking=True)
     doctor_id = fields.Many2one(string='Personal doctor', comodel_name='doctor',
-                                domain="[('doctor_role', '!=', 'intern')]")
+                                domain="[('is_intern', '=', False)]")
     birthday = fields.Date(string='Date of Birth')
     age = fields.Integer(compute='_compute_age')
     passport = fields.Char()
+    contact_person = fields.Char()
 
     @api.depends('birthday')
     def _compute_age(self):

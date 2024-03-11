@@ -37,10 +37,4 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="doctor_schedule_menu"
-              action="doctor_schedule_act_window"
-              parent="doctor_menu"
-              name="Doctor Schedule"
-              sequence="10"/>
-
 </odoo>
