@@ -6,6 +6,10 @@
         <field name="model">patient</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_view_patient_visits" string="View Patient Visits" type="object"
+                            class="oe_highlight"/>
+                </header>
                 <sheet>
                     <group>
                         <group>
@@ -45,6 +49,17 @@
                 <field name="passport"/>
                 <field name="contact_person"/>
             </tree>
+        </field>
+    </record>
+
+    <record id="patient_search_view" model="ir.ui.view">
+        <field name="name">patient.search.view</field>
+        <field name="model">patient</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="phone"/>
+            </search>
         </field>
     </record>
 

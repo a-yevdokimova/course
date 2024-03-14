@@ -31,12 +31,24 @@
         </field>
     </record>
 
+    <record id="diagnosis_pivot_view" model="ir.ui.view">
+        <field name="name">diagnosis.pivot.view</field>
+        <field name="model">diagnosis</field>
+        <field name="arch" type="xml">
+            <pivot string="Diagnosis Pivot">
+                <field name="disease_id" type="row"/>
+                <field name="visit_id" type="col" interval="month"/>
+                <field name="visit_id" type="col" interval="year"/>
+            </pivot>
+        </field>
+    </record>
+
 
     <record id="diagnosis_act_window" model="ir.actions.act_window">
         <field name="name">Diagnosis</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">diagnosis</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,pivot</field>
     </record>
 
 </odoo>

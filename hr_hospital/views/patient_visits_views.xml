@@ -6,6 +6,9 @@
         <field name="model">patient.visits</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <field name="visit_status" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
                 <sheet>
                     <group>
                         <field name="active" invisible="1"/>
@@ -15,6 +18,13 @@
                         <field name="patient_id"/>
                         <field name="diagnosis_ids"/>
                         <field name="confirmation" invisible=""/>
+                    </group>
+                    <group>
+                        <pivot string="Visits Pivot">
+                            <field name="doctor_id" type="row"/>
+                            <field name="visit_status" type="col"/>
+                            <field name="id" type="measure" string="Number of Visits"/>
+                        </pivot>
                     </group>
                 </sheet>
             </form>
@@ -37,12 +47,37 @@
         </field>
     </record>
 
+    <record id="patient_visit_calendar" model="ir.ui.view">
+        <field name="name">patient.visits.calendar</field>
+        <field name="model">patient.visits</field>
+        <field name="arch" type="xml">
+            <calendar string="Visits Calendar" date_start="visit_date" date_stop="visit_done_date">
+                <field name="active" invisible="1"/>
+                <field name="doctor_id"/>
+                <field name="patient_id"/>
+                <field name="diagnosis_ids"/>
+                <field name="confirmation"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="view_patient_visit_search" model="ir.ui.view">
+        <field name="name">patient.visits.search</field>
+        <field name="model">patient.visits</field>
+        <field name="arch" type="xml">
+            <search>
+                <group string="Group By">
+                    <filter string="Visit Status" name="visit_status" context="{'group_by': 'visit_status'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
 
     <record id="patient_visits_act_window" model="ir.actions.act_window">
         <field name="name">Patient Visits</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">patient.visits</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,calendar</field>
     </record>
 
 </odoo>
