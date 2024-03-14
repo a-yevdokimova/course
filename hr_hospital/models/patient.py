@@ -33,6 +33,7 @@ class Patient(models.Model):
                 ).years
             else:
                 rec.age = False
+
     @api.onchange('age')
     def _onchange_age(self):
         if self.age <= 18:
@@ -40,4 +41,13 @@ class Patient(models.Model):
         else:
             self.is_child = False
 
-
+    def action_view_patient_visits(self):
+        return {
+            'name': 'Patient Visits',
+            'view_type': 'form',
+            'view_mode': 'tree,form',
+            'res_model': 'patient.visits',
+            'domain': [('patient_id', '=', self.id)],
+            'type': 'ir.actions.act_window',
+            'context': {'search_default_patient_id': self.id}
+        }

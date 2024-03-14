@@ -27,6 +27,26 @@
                         </notebook>
                     </group>
                 </sheet>
+                <kanban>
+                    <templates>
+                        <t name="InternKanbanCard">
+                            <div class="oe_kanban_content">
+                                <div class="oe_kanban_title">
+                                    <field name="name"/>
+                                </div>
+                                <div class="oe_kanban_bottom">
+                                    <field name="age"/>
+                                    <field name="gender"/>
+                                    <field name="specialty"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                    <kanban-box>
+                        <field name="mentor_id" domain="[('is_intern', '=', True)]"/>
+                        <kanban-quick-create create="true"/>
+                    </kanban-box>
+                </kanban>
             </form>
         </field>
     </record>
@@ -50,12 +70,22 @@
         </field>
     </record>
 
+    <record id="doctor_search_view" model="ir.ui.view">
+        <field name="name">doctor.search.view</field>
+        <field name="model">doctor</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter string="Інтерни" name="is_mentor" domain="[('is_intern', '=', True)]"/>
+                <filter string="Ментори" name="is_intern" domain="[('is_intern', '=', False)]"/>
+            </search>
+        </field>
+    </record>
 
     <record id="doctor_act_window" model="ir.actions.act_window">
         <field name="name">Doctor</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">doctor</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,kanban</field>
     </record>
 
 </odoo>

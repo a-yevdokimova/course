@@ -27,6 +27,16 @@
         </field>
     </record>
 
+<!--    <record id="disease_search_panel" model="ir.ui.view">-->
+<!--        <field name="name">disease.search.panel</field>-->
+<!--        <field name="model">disease</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <searchpanel view_types="list">-->
+<!--                <field name="name" icon="fa-adjust" placeholder="Search Disease Name"/>-->
+<!--                <field name="parent_id" widget="many2one" placeholder="Search Parent Category"/>-->
+<!--            </searchpanel>-->
+<!--        </field>-->
+<!--    </record>-->
 
     <record id="disease_act_window" model="ir.actions.act_window">
         <field name="name">Disease</field>
