@@ -12,7 +12,7 @@ class PatientsVisit(models.Model):
     visit_status = fields.Selection([('scheduled', 'Scheduled'),
                                ('completed', 'Completed'),
                                ('cancelled', 'Cancelled')],
-                                tracking=True)
+                                default='scheduled')
     visit_date = fields.Datetime(string="Planned date", help='The planned date and time of the visit')
     visit_done_date = fields.Datetime(string="Done date", help='Date and time when the visit took place')
     doctor_id = fields.Many2one(comodel_name='doctor')
@@ -56,6 +56,7 @@ class PatientsVisit(models.Model):
     def _compute_display_name(self):
         for rec in self:
             rec.display_name = "%s (%s)" % (rec.patient_id.name, rec.doctor_id.name)
+
     # def write(self, vals):
     #     if 'active' in vals and not vals['active']:
     #         visits_with_diagnoses = self.filtered(lambda visit: visit.diagnosis_ids)
