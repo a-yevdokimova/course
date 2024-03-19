@@ -26,27 +26,28 @@
                             </page>
                         </notebook>
                     </group>
+                    <field name="intern_ids" mode="kanban"/>
+                        <kanban>
+                            <field name="name"/>
+                            <field name="age"/>
+                            <field name="gender"/>
+                            <field name="specialty"/>
+                            <templates>
+                                <t t-name="kanban-box">
+                                    <div class="oe_kanban_global_click'">
+                                        <div class="oe_kanban_details">
+                                            <field name="name"/>
+                                        </div>
+                                        <div class="oe_kanban_bottom">
+                                            <field name="age"/>
+                                            <field name="gender"/>
+                                            <field name="specialty"/>
+                                        </div>
+                                    </div>
+                                </t>
+                            </templates>
+                        </kanban>
                 </sheet>
-                <kanban>
-                    <templates>
-                        <t name="InternKanbanCard">
-                            <div class="oe_kanban_content">
-                                <div class="oe_kanban_title">
-                                    <field name="name"/>
-                                </div>
-                                <div class="oe_kanban_bottom">
-                                    <field name="age"/>
-                                    <field name="gender"/>
-                                    <field name="specialty"/>
-                                </div>
-                            </div>
-                        </t>
-                    </templates>
-                    <kanban-box>
-                        <field name="mentor_id" domain="[('is_intern', '=', True)]"/>
-                        <kanban-quick-create create="true"/>
-                    </kanban-box>
-                </kanban>
             </form>
         </field>
     </record>
