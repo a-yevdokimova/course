@@ -9,6 +9,8 @@
                 <header>
                     <button name="action_view_patient_visits" string="View Patient Visits" type="object"
                             class="oe_highlight"/>
+                    <button name="action_create_visits" string="Schedule a Visits" type="object"
+                            class="oe_highlight"/>
                 </header>
                 <sheet>
                     <group>
@@ -57,7 +59,7 @@
         <field name="model">patient</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name"/>
+                <field name="name" string="Name" filter_domain="['|', ('name','ilike',self), ('second_name','ilike',self)]"/>
                 <field name="phone"/>
             </search>
         </field>

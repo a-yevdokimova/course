@@ -12,9 +12,9 @@ class PatientsVisit(models.Model):
     visit_status = fields.Selection([('scheduled', 'Scheduled'),
                                ('completed', 'Completed'),
                                ('cancelled', 'Cancelled')],
-                                tracking=True)
-    visit_date = fields.Datetime(string='The planned date and time of the visit')
-    visit_done_date = fields.Datetime(string='Date and time when the visit took place')
+                                default='scheduled')
+    visit_date = fields.Datetime(string="Planned date", help='The planned date and time of the visit')
+    visit_done_date = fields.Datetime(string="Done date", help='Date and time when the visit took place')
     doctor_id = fields.Many2one(comodel_name='doctor')
     patient_id = fields.Many2one(comodel_name='patient')
     diagnosis_ids = fields.One2many('diagnosis', 'visit_id', string='Diagnoses')
@@ -51,6 +51,11 @@ class PatientsVisit(models.Model):
         if visits_with_diagnoses:
             raise ValidationError("You cannot delete visits with diagnoses.")
         return super(PatientsVisit, self).unlink()
+
+    @api.depends('patient_id', 'doctor_id')
+    def _compute_display_name(self):
+        for rec in self:
+            rec.display_name = "%s (%s)" % (rec.patient_id.name, rec.doctor_id.name)
 
     # def write(self, vals):
     #     if 'active' in vals and not vals['active']:

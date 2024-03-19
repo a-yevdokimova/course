@@ -51,3 +51,14 @@ class Patient(models.Model):
             'type': 'ir.actions.act_window',
             'context': {'search_default_patient_id': self.id}
         }
+
+    def action_create_visits(self):
+        self.ensure_one()
+        return {
+            'name': 'New Visits',
+            'type': 'ir.actions.act_window',
+            'res_model': 'patient.visits',
+            'view_mode': 'form',
+            'context': {'default_patient_id': self.id},
+            'target': 'new'
+        }

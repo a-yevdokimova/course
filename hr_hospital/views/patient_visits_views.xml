@@ -10,21 +10,20 @@
                     <field name="visit_status" widget="statusbar" options="{'clickable': '1'}"/>
                 </header>
                 <sheet>
+                    <field name="active" invisible="1"/>
+                    <field name="confirmation" invisible=""/>
                     <group>
-                        <field name="active" invisible="1"/>
-                        <field name="visit_date"/>
-                        <field name="visit_done_date"/>
-                        <field name="doctor_id"/>
-                        <field name="patient_id"/>
-                        <field name="diagnosis_ids"/>
-                        <field name="confirmation" invisible=""/>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="doctor_id"/>
+                        </group>
+                        <group>
+                            <field name="visit_date"/>
+                            <field name="visit_done_date"/>
+                        </group>
                     </group>
-                    <group>
-                        <pivot string="Visits Pivot">
-                            <field name="doctor_id" type="row"/>
-                            <field name="visit_status" type="col"/>
-                            <field name="id" type="measure" string="Number of Visits"/>
-                        </pivot>
+                    <group string="Diagnosis">
+                        <field name="diagnosis_ids" nolable="1" colspan="2"/>
                     </group>
                 </sheet>
             </form>
@@ -36,12 +35,13 @@
         <field name="model">patient.visits</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="active" invisible="1"/>
-                <field name="visit_date"/>
-                <field name="visit_done_date"/>
-                <field name="doctor_id"/>
-                <field name="patient_id"/>
-                <field name="diagnosis_ids"/>
+                <field name="active" column_invisible="1"/>
+                <field name="display_name" string="Name"/>
+                <field name="visit_date" optional="show"/>
+                <field name="visit_done_date" optional="show"/>
+                <field name="doctor_id" optional="show"/>
+                <field name="patient_id" optional="show"/>
+                <field name="diagnosis_ids" optional="hide"/>
                 <field name="confirmation"/>
             </tree>
         </field>
@@ -73,11 +73,22 @@
         </field>
     </record>
 
+    <record id="view_patient_visit_pivot" model="ir.ui.view">
+        <field name="name">patient.visits.pivot</field>
+        <field name="model">patient.visits</field>
+        <field name="arch" type="xml">
+            <pivot disable_linking="True" display_quantity="False" sample="1">
+                <field name="doctor_id" type="row"/>
+                <field name="visit_date" interval="day" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
     <record id="patient_visits_act_window" model="ir.actions.act_window">
         <field name="name">Patient Visits</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">patient.visits</field>
-        <field name="view_mode">tree,form,calendar</field>
+        <field name="view_mode">tree,pivot,calendar,form</field>
     </record>
 
 </odoo>
