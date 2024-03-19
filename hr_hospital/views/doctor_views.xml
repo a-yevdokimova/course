@@ -26,7 +26,7 @@
                             </page>
                         </notebook>
                     </group>
-                    <field name="intern_ids" mode="kanban"/>
+                    <field name="intern_ids" mode="kanban">
                         <kanban>
                             <field name="name"/>
                             <field name="age"/>
@@ -47,6 +47,7 @@
                                 </t>
                             </templates>
                         </kanban>
+                    </field>
                 </sheet>
             </form>
         </field>
@@ -76,8 +77,8 @@
         <field name="model">doctor</field>
         <field name="arch" type="xml">
             <search>
-                <filter string="Інтерни" name="is_mentor" domain="[('is_intern', '=', True)]"/>
-                <filter string="Ментори" name="is_intern" domain="[('is_intern', '=', False)]"/>
+                <filter string="Intern" name="is_mentor" domain="[('is_intern', '=', True)]"/>
+                <filter string="Mentor" name="is_intern" domain="[('is_intern', '=', False)]"/>
             </search>
         </field>
     </record>
