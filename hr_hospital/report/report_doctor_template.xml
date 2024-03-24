@@ -1,56 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <template id="logo_template">
+        <div>
+            <div class="col-6">
+                <img t-att-scr="image_data_uri(user.company_id.logo)"
+                     alt="logo"/>
+                <p>
+                    <t t-esc="user.company_id.name"/>
+                </p>
+                <p>
+                    <t t-esc="user.company_id.phone"/>
+                </p>
+            </div>
+        </div>
+    </template>
+
+    <template id="print_date_time">
+        <div>
+            <div style="float:left;">
+                <strong>
+                    <t t-esc="user.company_id.street"/>
+                </strong>
+            </div>
+            <div name="hospital_date_time" style="float:right;">
+                <strong>
+                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y %H:%M')"/>
+                </strong>
+            </div>
+        </div>
+    </template>
+
+    <template id="content_doctor">
+        <div style="text-align: center;">
+            <strong>
+                <span t-esc="doc.name"/>
+                <span t-esc="doc.second_name"/>
+                <span t-esc="doc.specialty"/>
+            </strong>
+            <div>
+                <table class="table-bordered"
+                       style="border: 1px solid black;"
+                       width="100%">
+                    <tr>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Birthday</th>
+                        <th>Phone</th>
+                        <th>Visit's status</th>
+                    </tr>
+                    <t t-foreach="doc.patient_visit_id" t-as="visit_id">
+                        <tr>
+                            <td>
+                                <t t-esc="visit_id.patient_id.name"/>
+                                <t t-esc="visit_id.patient_id.second_name"/>
+                            </td>
+                            <td>
+                                <t t-esc="visit_id.patient_id.gender"/>
+                            </td>
+                            <td>
+                                <t t-esc="visit_id.patient_id.birthday"/>
+                            </td>
+                            <td>
+                                <t t-esc="visit_id.patient_id.phone"/>
+                            </td>
+                            <td>
+                                <t t-esc="visit_id.visit_status"/>
+                                <t t-if="visit_id.visit_status=='scheduled'">
+                                    <div style="height:20px; background-color: yellow;"/>
+                                </t>
+                                <t t-elif="visit_id.visit_status=='completed'">
+                                    <div style="height:20px; background-color: green;"/>
+                                </t>
+                                <t t-elif="visit_id.visit_status=='cancelled'">
+                                    <div style="height:20px; background-color: red;"/>
+                                </t>
+                            </td>
+                        </tr>
+                    </t>
+                </table>
+            </div>
+        </div>
+    </template>
+
     <template id='report_doctor_template'>
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
-                <h1>Doctor</h1>
-                <t t-out="doc.name"/>
+                <t t-call="hr_hospital.logo_template"/>
+                <t t-call="hr_hospital.content_doctor"/>
+                <t t-call="hr_hospital.print_date_time"/>
             </t>
         </t>
     </template>
 </odoo>
-
-
-<!--<template id="logo_template">-->
-<!--        <div>-->
-<!--            <div class="col-6">-->
-<!--                <img t-att-scr="image_data_uri(user.company_id.logo)"-->
-<!--                     alt="logo"-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </template>-->
-
-<!--    <template id="print_date_time">-->
-<!--        <div name="hospital_date_time" style="text-align:right;">-->
-<!--            <strong>-->
-<!--                <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y %H:%M')"/>-->
-<!--            </strong>-->
-<!--        </div>-->
-<!--    </template>-->
-
-<!--    <template id="content_doctor">-->
-<!--        <div style="text:align: center;">-->
-<!--            <strong>-->
-<!--                <span t-esc="doc.doctor_id.name"/>-->
-<!--                <span t-esc="doc.doctor_id.second_name"/>-->
-<!--                <span t-esc="doc.doctor_id.specialty"/>-->
-<!--            </strong>-->
-<!--            <div>-->
-<!--                <table class="table-bordered"-->
-<!--                       style="border: 1px solid black;"-->
-<!--                       width="100%">-->
-<!--                    <tr>-->
-<!--                        <t t-esc="doc.patient_id.name"/>-->
-<!--                        <t t-esc="doc.patient_id.second_name"/>-->
-<!--                        <t t-esc="doc.patient_id.gender"/>-->
-<!--                        <t t-esc="doc.patient_id.phone"/>-->
-<!--                        <t t-esc="doc.patient_id.visit_status"-->
-<!--                        />-->
-
-<!--                    </tr>-->
-
-
-<!--                </table>-->
-
-<!--            </div>-->
-<!--        </div>-->
-<!--    </template>-->

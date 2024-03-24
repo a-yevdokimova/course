@@ -21,6 +21,7 @@ class Doctor(models.Model):
     is_intern = fields.Boolean(string='Intern')
     mentor_id = fields.Many2one('doctor', string='Doctor Mentor', domain="[('is_intern', '!=', True)]")
     intern_ids = fields.One2many(comodel_name='doctor', compute='_compute_intern_ids', string='Interns')
+    patient_visit_id = fields.One2many('patient.visits', 'doctor_id')
 
     @api.depends('is_intern')
     def _compute_intern_ids(self):
