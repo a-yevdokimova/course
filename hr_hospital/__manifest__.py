@@ -21,10 +21,10 @@
         'views/history_change_views.xml',
         'views/doctor_schedule_views.xml',
         'data/disease_data.xml',
-        'report/report.xml',
         'report/report_doctor_template.xml',
-
+        'report/report.xml',
     ],
+
     'demo': [
         'demo/doctor_demo.xml',
         'demo/patient_demo.xml',

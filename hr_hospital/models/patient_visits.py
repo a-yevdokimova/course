@@ -20,6 +20,7 @@ class PatientsVisit(models.Model):
     diagnosis_ids = fields.One2many('diagnosis', 'visit_id', string='Diagnoses')
     active = fields.Boolean(default=True)
     confirmation = fields.Boolean(string='Confirmation from doctor-mentor')
+
     # appointment_id = fields.Many2one('doctor.schedule')
     # is_appointment_done = fields.Boolean(string="Is the appointment done?")
 
