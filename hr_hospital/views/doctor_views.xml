@@ -83,6 +83,81 @@
         </field>
     </record>
 
+    <record id="view_doctor_kanban" model="ir.ui.view">
+        <field name="name">doctor.kanban</field>
+        <field name="model">doctor</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <field name="second_name"/>
+                <field name="specialty"/>
+                <field name="phone"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <p>
+                                    <field name="name"/>
+                                </p>
+                                <p>
+                                    <field name="second_name"/>
+                                </p>
+                            </div>
+                            <div class="oe_kanban_bottom">
+                                <p>
+                                    <field name="specialty"/>
+                                </p>
+                                <p>
+                                    <field name="mentor_id"/>
+                                </p>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <!--    -->
+
+
+    <!--                            <div t-attf-class="#{!selection_mode ? 'text-center' : ''}">-->
+    <!--                                <i class="fa fa-building" role="img" aria-label="Enterprise" title="Enterprise"></i>-->
+    <!--                                <strong>-->
+    <!--                                    <field name="name"/>-->
+    <!--                                </strong>-->
+    <!--                            </div>-->
+    <!--                            <hr class="mt4 mb4"/>-->
+    <!--                            <div class="row" t-if="!selection_mode">-->
+    <!--                                <div t-if="record.email.value" class="col-6 text-center">-->
+    <!--                                    <strong>Email:</strong>-->
+    <!--                                </div>-->
+    <!--                                <div t-if="record.phone.value" class="col-6 text-center">-->
+    <!--                                    <strong>Phone</strong>-->
+    <!--                                </div>-->
+    <!--                                <div t-if="record.email.value" class="col-6 text-center">-->
+    <!--                                    <field name="email"/>-->
+    <!--                                </div>-->
+    <!--                                <div t-if="record.phone.value" class="col-6 text-center o_force_ltr">-->
+    <!--                                    <field name="phone"/>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                            <div t-else="">-->
+    <!--                                <div t-if="record.email.value">-->
+    <!--                                    <strong>Email:</strong>-->
+    <!--                                    <field name="email"/>-->
+    <!--                                </div>-->
+    <!--                                <div t-if="record.phone.value" class="o_force_ltr">-->
+    <!--                                    <strong>Phone:</strong>-->
+    <!--                                    <field name="phone"/>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </t>-->
+    <!--                </templates>-->
+    <!--            </kanban>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
     <record id="doctor_act_window" model="ir.actions.act_window">
         <field name="name">Doctor</field>
         <field name="type">ir.actions.act_window</field>
