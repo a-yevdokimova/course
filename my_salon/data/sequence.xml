@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="sequence_nails_clients" model="ir.sequence">
+            <field name="name">Nails Clients Sequence </field>
+            <field name="code">nails.clients</field>
+            <field name="prefix"></field>
+            <field name="padding">4</field>
+        </record>
+
+    </data>
+</odoo>
