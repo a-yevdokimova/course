@@ -12,9 +12,12 @@
     'data': [
         'security/ir.model.access.csv',
         'data/sequence.xml',
-        'views/menu.xml',
-        'views/client.xml',
-        'views/master.xml'
+        'views/menu_views.xml',
+        'views/client_views.xml',
+        'views/master_views.xml',
+        'views/service_views.xml',
+        # 'views/appointment_views.xml',
+        # 'views/product_views.xml',
 
     ],
     'installable': True,
