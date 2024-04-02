@@ -7,13 +7,23 @@
         <field name="arch" type="xml">
             <form string="Appointment Form View">
                 <group>
-                    <field name="client_id"/>
-                    <field name="master_id"/>
-                    <field name="service_id"/>
-                    <field name="appointment_date"/>
-                    <field name="start_time"/>
-                    <field name="end_time"/>
-                    <field name="notes"/>
+                    <group>
+                        <field name="client_id"/>
+                        <field name="master_id"/>
+                    </group>
+                    <group>
+                        <field name="service_id"/>
+                        <div>
+                            <strong>
+                                Date appointment:
+                            </strong>
+                            <div>
+                                <field name="start_time" class="oe_inline"/>
+                                -
+                                <field name="end_time" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </group>
                 </group>
             </form>
         </field>
@@ -27,7 +37,6 @@
                 <field name="client_id"/>
                 <field name="master_id"/>
                 <field name="service_id"/>
-                <field name="appointment_date"/>
                 <field name="start_time"/>
                 <field name="end_time"/>
                 <field name="notes"/>
@@ -39,7 +48,7 @@
         <field name="name">appointment.calendar</field>
         <field name="model">appointment</field>
         <field name="arch" type="xml">
-            <calendar string="Appointment Calendar View" date_start="appointment_date" date_stop="appointment_date">
+            <calendar string="Appointment Calendar View" date_start="start_time" date_stop="end_time">
                 <field name="client_id"/>
                 <field name="master_id"/>
                 <field name="service_id"/>
@@ -58,7 +67,6 @@
                 <field name="client_id"/>
                 <field name="master_id"/>
                 <field name="service_id"/>
-                <field name="appointment_date"/>
                 <field name="start_time"/>
                 <field name="end_time"/>
                 <field name="notes"/>

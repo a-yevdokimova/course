@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="client_1" model="client">
+        <field name="name">Jessica</field>
+        <field name="second_name">Taylor</field>
+        <field name="age">42</field>
+        <field name="gender">male</field>
+    </record>
+
+    <record id="client_2" model="client">
+        <field name="name">Rachel</field>
+        <field name="second_name">Clark</field>
+        <field name="age">43</field>
+        <field name="gender">female</field>
+    </record>
+
+    <record id="client_3" model="client">
+        <field name="name">David</field>
+        <field name="second_name">Lee</field>
+        <field name="age">44</field>
+        <field name="gender">others</field>
+    </record>
+</odoo>
