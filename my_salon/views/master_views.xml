@@ -45,6 +45,7 @@
         <field name="arch" type="xml">
             <kanban>
                 <field name="name"/>
+                <field name="second_name"/>
                 <field name="service_ids"/>
                 <templates>
                     <t t-name="kanban-box">
@@ -83,6 +84,7 @@
         <field name="arch" type="xml">
             <search>
                 <field name="name"/>
+                <field name="second_name"/>
                 <field name="service_ids"/>
                 <field name="ref"/>
                 <field name="gender"/>

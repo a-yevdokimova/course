@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="product_1" model="product">
+        <field name="name">Oil</field>
+        <field name="price">25.69</field>
+        <field name="description">Oil for massage</field>
+        <field name="provider_ids"  eval="[(6, 0, [ref('provider_3'), ref('provider_2')])]"/>
+    </record>
+
+    <record id="product_2" model="product">
+        <field name="name">Gel polish</field>
+        <field name="price">689.75</field>
+        <field name="description">Red polish</field>
+        <field name="provider_ids" ref="provider_1"/>
+    </record>
+
+    <record id="product_3" model="product">
+        <field name="name">Hair comb</field>
+        <field name="price">1500</field>
+        <field name="description">Soft hair comb</field>
+        <field name="provider_ids" ref="provider_3"/>
+    </record>
+</odoo>

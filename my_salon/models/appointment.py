@@ -10,7 +10,6 @@ class Appointment(models.Model):
     service_id = fields.Many2one('my_service', required=True)
     start_time = fields.Datetime()
     end_time = fields.Datetime()
-    notes = fields.Text(string='Notes')
 
     @api.constrains('start_time', 'end_time')
     def _check_time_range(self):

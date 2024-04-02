@@ -6,6 +6,7 @@ class Master(models.Model):
     _description = "Master Records"
 
     name = fields.Char(string='Name', required=True, tracking=True)
+    second_name = fields.Char(string='Second Name', required=True, tracking=True)
     gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('others', 'Others')], string="Gender",
                               tracking=True)
     ref = fields.Char(string="Reference", default=lambda self: ('New'))

@@ -3,21 +3,26 @@
     <record id="client_1" model="client">
         <field name="name">Jessica</field>
         <field name="second_name">Taylor</field>
-        <field name="age">42</field>
+        <field name="age">20</field>
         <field name="gender">male</field>
+        <field name="master_id" ref="master_1"/>
     </record>
 
     <record id="client_2" model="client">
         <field name="name">Rachel</field>
         <field name="second_name">Clark</field>
-        <field name="age">43</field>
+        <field name="age">16</field>
         <field name="gender">female</field>
+        <field name="master_id" ref="master_2"/>
+
     </record>
 
     <record id="client_3" model="client">
         <field name="name">David</field>
         <field name="second_name">Lee</field>
-        <field name="age">44</field>
+        <field name="age">36</field>
         <field name="gender">others</field>
+        <field name="master_id" ref="master_3"/>
+
     </record>
 </odoo>

@@ -39,9 +39,9 @@
         <field name="model">provider</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name"/>
-                <field name="phone"/>
-                <field name="product_ids"/>
+                <field name="name" optional="show"/>
+                <field name="phone" optional="show"/>
+                <field name="product_ids" optional="show"/>
             </search>
         </field>
     </record>

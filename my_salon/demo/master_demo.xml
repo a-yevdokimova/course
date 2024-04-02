@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo noupdate="1">
-    <record id="client_1" model="client">
+    <record id="master_1" model="master">
         <field name="name">Olivia</field>
         <field name="second_name">Wilson</field>
-        <field name="age">42</field>
-        <field name="gender">male</field>
-    </record>
-
-    <record id="client_2" model="client">
-        <field name="name">Samantha</field>
-        <field name="second_name">White</field>
-        <field name="age">43</field>
+        <field name="service_ids"  eval="[(6, 0, [ref('service_1'), ref('service_2')])]"  />
         <field name="gender">female</field>
     </record>
 
-    <record id="client_3" model="client">
+    <record id="master_2" model="master">
+        <field name="name">Samantha</field>
+        <field name="second_name">White</field>
+        <field name="service_ids" ref="service_2" />
+        <field name="gender">female</field>
+    </record>
+
+    <record id="master_3" model="master">
         <field name="name">John</field>
         <field name="second_name">Smith</field>
-        <field name="age">44</field>
-        <field name="gender">others</field>
+        <field name="service_ids" ref="service_3" />
+        <field name="gender">male</field>
     </record>
 </odoo>
