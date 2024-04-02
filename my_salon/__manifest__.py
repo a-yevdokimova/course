@@ -28,7 +28,7 @@
         'demo/master_demo.xml',
         'demo/product_demo.xml',
         'demo/provider_demo.xml',
-        'demo/service_demo.xml',
+        'demo/service_demo.xml'
     ],
 
     'installable': True,

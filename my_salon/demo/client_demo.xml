@@ -6,6 +6,7 @@
         <field name="age">20</field>
         <field name="gender">male</field>
         <field name="master_id" ref="master_1"/>
+        <field name="image_1920" type="base64" file="my_salon/static/img/download_1.jpeg"/>
     </record>
 
     <record id="client_2" model="client">
@@ -14,7 +15,7 @@
         <field name="age">16</field>
         <field name="gender">female</field>
         <field name="master_id" ref="master_2"/>
-
+        <field name="image_1920" type="base64" file="my_salon/static/img/download_2.jpeg"/>
     </record>
 
     <record id="client_3" model="client">
@@ -23,6 +24,6 @@
         <field name="age">36</field>
         <field name="gender">others</field>
         <field name="master_id" ref="master_3"/>
-
+        <field name="image_1920" type="base64" file="my_salon/static/img/download_3.jpeg"/>
     </record>
 </odoo>
