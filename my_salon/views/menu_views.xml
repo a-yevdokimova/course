@@ -25,14 +25,19 @@
               parent="menu_service_root"
               sequence="10"/>
 
-    <!--    <menuitem id="menu_appointment"-->
-    <!--        name="Appointment"-->
-    <!--        parent="menu_service_root"-->
-    <!--        sequence="20"/>-->
+        <menuitem id="menu_appointment"
+            name="Appointment"
+            parent="menu_service_root"
+            sequence="20"/>
 
-    <!--    <menuitem id="menu_product"-->
-    <!--        name="Product"-->
-    <!--        parent="menu_service_root"-->
-    <!--        sequence="30"/>-->
+    <menuitem id="menu_product"
+            name="Product"
+            parent="menu_service_root"
+            sequence="30"/>
+
+    <menuitem id="menu_provider"
+            name="Provider"
+            parent="menu_service_root"
+            sequence="40"/>
 
 </odoo>

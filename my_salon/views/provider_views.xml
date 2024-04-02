@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_provider_form" model="ir.ui.view">
+        <field name="name">provider.form</field>
+        <field name="model">provider</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="phone"/>
+                        </group>
+                        <group>
+                            <field name="address"/>
+                            <field name="product_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_provider_tree" model="ir.ui.view">
+        <field name="name">provider.tree</field>
+        <field name="model">provider</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" optional="show"/>
+                <field name="phone" optional="show"/>
+                <field name="address" optional="hide"/>
+                <field name="product_ids" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_provider_search" model="ir.ui.view">
+        <field name="name">provider.search</field>
+        <field name="model">provider</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" optional="show"/>
+                <field name="phone" optional="show"/>
+                <field name="product_ids" optional="show"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_provider" model="ir.actions.act_window">
+        <field name="name">Provider</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">provider</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context"></field>
+    </record>
+
+    <menuitem id="menu_provider"
+              name="Provider"
+              parent="menu_service_root"
+              action="action_provider"/>
+</odoo>

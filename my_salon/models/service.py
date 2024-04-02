@@ -9,4 +9,5 @@ class Service(models.Model):
     price = fields.Float()
     product_ids = fields.Many2many(comodel_name='product')
     master_ids = fields.Many2many(comodel_name='master')
+    duration = fields.Float(string='Duration (hours)', required=True)
     active = fields.Boolean(default=True)
