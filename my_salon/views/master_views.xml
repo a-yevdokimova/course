@@ -6,12 +6,13 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <field name="active" invisible="1"/>
                     <widget name="web_ribbon" title="Archived" bg_color="bg-danger" invisible="active"/>
                     <group>
-                        <field name="name"/>
                         <field name="ref"/>
+                        <field name="name"/>
+                        <field name="service_ids" widget="many2many_tags"/>
                         <field name="gender"/>
-                        <field name="active" invisible="1"/>
                     </group>
                 </sheet>
                 <div class="oe_chatter">
@@ -27,9 +28,10 @@
         <field name="model">master</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="ref" optional="hide"/>
                 <field name="name"/>
-                <field name="ref"/>
-                <field name="gender"/>
+                <field name="service_ids"/>
+                <field name="gender" optional="hide"/>
             </tree>
         </field>
     </record>
@@ -40,10 +42,11 @@
         <field name="arch" type="xml">
             <search>
                 <field name="name"/>
+                <field name="service_ids"/>
                 <field name="ref"/>
                 <field name="gender"/>
                 <separator/>
-                <filter name="archived" string="Archived" domain="[('active', '=', False)]" />
+                <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
             </search>
         </field>
     </record>
@@ -59,6 +62,5 @@
     <menuitem id="menu_master"
               name="Masters"
               parent="menu_salon_root"
-              action="action_master"
-              sequence="10"/>
+              action="action_master"/>
 </odoo>

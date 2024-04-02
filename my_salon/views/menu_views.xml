@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_salon_root"
+              name="Salon"/>
+
+    <menuitem id="menu_client"
+              name="Clients"
+              parent="menu_salon_root"
+              sequence="10"/>
+
+    <menuitem id="menu_master"
+              name="Masters"
+              parent="menu_salon_root"
+              sequence="20"/>
+
+    <menuitem id="menu_service_root"
+              name="Service"
+              parent="menu_salon_root"
+              sequence="30"/>
+
+
+    <menuitem id="menu_my_service"
+              name="Service"
+              parent="menu_service_root"
+              sequence="10"/>
+
+    <!--    <menuitem id="menu_appointment"-->
+    <!--        name="Appointment"-->
+    <!--        parent="menu_service_root"-->
+    <!--        sequence="20"/>-->
+
+    <!--    <menuitem id="menu_product"-->
+    <!--        name="Product"-->
+    <!--        parent="menu_service_root"-->
+    <!--        sequence="30"/>-->
+
+</odoo>

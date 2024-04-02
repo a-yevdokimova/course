@@ -7,10 +7,11 @@
         <field name="arch" type="xml">
             <form>
                 <field name="active" invisible="1"/>
+                <field name="avatar_128" invisible="1"/>
                 <sheet>
                     <widget name="web_ribbon" title="Archived" bg_color="bg-warning" invisible="active"/>
                     <field name="image_1920" widget="image" class="oe_avatar m-0"
-                           options="{&quot;zoom&quot;: true, &quot;preview_image&quot;:&quot;avatar_128&quot;}"/>
+                           options="{'zoom': 'true', 'preview_image': 'avatar_128'}"/>
                     <div class="oe_title">
                         <h1>
                             <field name="ref" readonly="1"/>
@@ -70,20 +71,26 @@
                 <field name="notes"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div class="oe_kanban_global_click">
+                        <div class="oe_kanban_global_click d-flex flex-row">
                             <div class="oe_kanban_image">
-                                <img t-att-src="kanban_image('my_salon.model_client', 'image_1920', record.id.raw_value)"
-                                     width="50" height="50"/>
+                                <img
+                                        t-att-src="kanban_image('client', 'avatar_128', record.id.raw_value)"
+                                        width="50"
+                                        height="80"
+                                        style="margin-right: 10px;"
+                                />
                             </div>
-                            <div class="oe_kanban_details">
+                            <div class="oe_kanban_details d-flex flex-column">
                                 <strong>
-                                    <field name="name"/>
+                                    <field name="name"/> <field name="second_name"/>
                                 </strong>
                                 <div>
-                                    <field name="second_name"/>
+                                    <hr style="margin: 6px 0 12px 0px;"/>
                                 </div>
-                                <div>
+                                <div style="text-align: right;">
+                                    <i>
                                     <field name="notes"/>
+                                    </i>
                                 </div>
                             </div>
                         </div>
@@ -129,7 +136,6 @@
     <menuitem id="menu_client"
               name="Clients"
               parent="menu_salon_root"
-              action="action_client"
-              sequence="10"/>
+              action="action_client"/>
 
 </odoo>

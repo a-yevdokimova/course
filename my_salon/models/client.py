@@ -16,6 +16,7 @@ class Client(models.Model):
     ref = fields.Char(string="Reference", default=lambda self: ('New'))
     master_id = fields.Many2one('master', string="Masters")
     active = fields.Boolean(default=True)
+    avatar_128 = fields.Image(related='image_1920', max_width=128, max_height=128)
     tag_ids = fields.Many2many('res.partner.category', 'client_tag_rel', 'clients_id', 'tag_id', string="Tags")
 
 

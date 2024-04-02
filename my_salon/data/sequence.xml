@@ -2,10 +2,10 @@
 <odoo>
     <data noupdate="1">
 
-        <record id="sequence_nails_clients" model="ir.sequence">
-            <field name="name">Nails Clients Sequence </field>
-            <field name="code">nails.clients</field>
-            <field name="prefix"></field>
+        <record id="sequence_clients" model="ir.sequence">
+            <field name="name">Clients Sequence </field>
+            <field name="code">clients</field>
+            <field name="prefix">C</field>
             <field name="padding">4</field>
         </record>
 
