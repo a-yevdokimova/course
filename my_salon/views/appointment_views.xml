@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_appointment_form" model="ir.ui.view">
+        <field name="name">appointment.form</field>
+        <field name="model">appointment</field>
+        <field name="arch" type="xml">
+            <form string="Appointment Form View">
+                <group>
+                    <field name="client_id"/>
+                    <field name="master_id"/>
+                    <field name="service_id"/>
+                    <field name="appointment_date"/>
+                    <field name="start_time"/>
+                    <field name="end_time"/>
+                    <field name="notes"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_appointment_tree" model="ir.ui.view">
+        <field name="name">appointment.tree</field>
+        <field name="model">appointment</field>
+        <field name="arch" type="xml">
+            <tree string="Appointment Tree View">
+                <field name="client_id"/>
+                <field name="master_id"/>
+                <field name="service_id"/>
+                <field name="appointment_date"/>
+                <field name="start_time"/>
+                <field name="end_time"/>
+                <field name="notes"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_appointment_calendar" model="ir.ui.view">
+        <field name="name">appointment.calendar</field>
+        <field name="model">appointment</field>
+        <field name="arch" type="xml">
+            <calendar string="Appointment Calendar View" date_start="appointment_date" date_stop="appointment_date">
+                <field name="client_id"/>
+                <field name="master_id"/>
+                <field name="service_id"/>
+                <field name="start_time"/>
+                <field name="end_time"/>
+                <field name="notes"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="view_appointment_pivot" model="ir.ui.view">
+        <field name="name">appointment.pivot</field>
+        <field name="model">appointment</field>
+        <field name="arch" type="xml">
+            <pivot string="Appointment Pivot View">
+                <field name="client_id"/>
+                <field name="master_id"/>
+                <field name="service_id"/>
+                <field name="appointment_date"/>
+                <field name="start_time"/>
+                <field name="end_time"/>
+                <field name="notes"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="action_appointment" model="ir.actions.act_window">
+        <field name="name">Appointment</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">appointment</field>
+        <field name="view_mode">calendar,tree,form,pivot</field>
+        <field name="context"></field>
+    </record>
+
+    <menuitem id="menu_appointment"
+              name="Appointment"
+              parent="menu_service_root"
+              action="action_appointment"/>
+
+</odoo>

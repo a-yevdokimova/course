@@ -16,8 +16,9 @@
         'views/client_views.xml',
         'views/master_views.xml',
         'views/service_views.xml',
-        # 'views/appointment_views.xml',
-        # 'views/product_views.xml',
+        'views/appointment_views.xml',
+        'views/product_views.xml',
+        'views/provider_views.xml'
 
     ],
     'installable': True,

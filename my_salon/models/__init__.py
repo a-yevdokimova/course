@@ -1,1 +1,1 @@
-from . import client, master, appointment, product, service
+from . import client, master, appointment, product, service, provider
