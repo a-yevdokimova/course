@@ -4,23 +4,23 @@
         <field name="client_id" ref="client_1"/>
         <field name="master_id" ref="master_1"/>
         <field name="service_id" ref="service_1"/>
-        <field name="start_time" eval="&quot;2024-03-07 10:00:00&quot;"/>
-        <field name="end_time" eval="&quot;2024-03-07 11:30:00&quot;"/>
+        <field name="start_time" eval="datetime(2024,3,7 10,0)"/>
+        <field name="end_time" eval="datetime(2024,3,7 11,0)"/>
     </record>
 
     <record id="appointment_2" model="appointment">
         <field name="client_id" ref="client_2"/>
         <field name="master_id" ref="master_2"/>
         <field name="service_id" ref="service_2"/>
-        <field name="start_time" eval="&quot;2024-03-07 14:00:00&quot;"/>
-        <field name="end_time" eval="&quot;2024-03-07 15:30:00&quot;"/>
+        <field name="start_time" eval="datetime(2024,3,8 12,0)"/>
+        <field name="end_time" eval="datetime(2024,3,8 13,0)"/>
     </record>
 
     <record id="appointment_3" model="appointment">
         <field name="client_id" ref="client_3"/>
         <field name="master_id" ref="master_3"/>
         <field name="service_id" ref="service_3"/>
-        <field name="start_time" eval="&quot;2024-03-07 09:00:00&quot;"/>
-        <field name="end_time" eval="&quot;2024-03-07 10:30:00&quot;"/>
+        <field name="start_time" eval="datetime(2024,3,9 14,0)"/>
+        <field name="end_time" eval="datetime(2024,3,9 15,0)"/>
     </record>
 </odoo>

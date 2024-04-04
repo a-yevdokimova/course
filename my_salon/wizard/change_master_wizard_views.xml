@@ -1,0 +1,34 @@
+<odoo>
+    <record id="change_master_wizard_views_form" model="ir.ui.view">
+        <field name="name">change.master.wizard.form</field>
+        <field name="model">change.master.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="client_id"/>
+                        <field name="master_id"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_change" string="Change master" class="btn-primary" data-hotkey="q"/>
+                    <button name="cancel" data-hotkey="z" string="Discard" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_change_doctor_wizard" model="ir.actions.act_window">
+        <field name="name">Change master</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">change.master.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_change_master"
+              name="Change master"
+              parent="menu_service_root"
+              action="action_change_doctor_wizard"/>
+
+</odoo>
