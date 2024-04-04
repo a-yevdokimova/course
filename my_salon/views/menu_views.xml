@@ -19,25 +19,29 @@
               parent="menu_salon_root"
               sequence="30"/>
 
-
     <menuitem id="menu_my_service"
               name="Service"
               parent="menu_service_root"
               sequence="10"/>
 
-        <menuitem id="menu_appointment"
-            name="Appointment"
-            parent="menu_service_root"
-            sequence="20"/>
+    <menuitem id="menu_appointment"
+              name="Appointment"
+              parent="menu_service_root"
+              sequence="20"/>
 
     <menuitem id="menu_product"
-            name="Product"
-            parent="menu_service_root"
-            sequence="30"/>
+              name="Product"
+              parent="menu_service_root"
+              sequence="30"/>
 
     <menuitem id="menu_provider"
-            name="Provider"
-            parent="menu_service_root"
-            sequence="40"/>
+              name="Provider"
+              parent="menu_service_root"
+              sequence="40"/>
 
+    <menuitem id="menu_change_master"
+              name="Change master"
+              parent="menu_service_root"
+              action="action_change_doctor_wizard"
+              sequence="50"/>
 </odoo>
