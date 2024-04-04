@@ -23,12 +23,12 @@
     ],
 
     'demo': [
-        'demo/appointment_demo.xml',
         'demo/client_demo.xml',
         'demo/master_demo.xml',
-        'demo/product_demo.xml',
         'demo/provider_demo.xml',
-        'demo/service_demo.xml'
+        'demo/product_demo.xml',
+        'demo/service_demo.xml',
+        'demo/appointment_demo.xml',
     ],
 
     'installable': True,

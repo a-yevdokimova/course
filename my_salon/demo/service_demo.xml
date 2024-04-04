@@ -3,24 +3,24 @@
     <record id="service_1" model="my_service">
         <field name="name">Massage</field>
         <field name="price">1600</field>
-        <field name="product_ids" ref="product_1"/>
-        <field name="master_ids"  eval="[(6, 0, [ref('master_1'), ref('master_2')])]"/>
+        <field name="product_ids" eval="[(4,ref('product_1'))]"/>
+        <field name="master_ids"  eval="[(4,ref('master_1')),(4,ref('master_2'))]"/>
         <field name="duration">1</field>
     </record>
 
     <record id="service_2" model="my_service">
         <field name="name">Manicure</field>
         <field name="price">800</field>
-        <field name="product_ids" ref="product_2"/>
-        <field name="master_ids" ref="master_1"/>
+        <field name="product_ids" eval="[(4,ref('product_2'))]"/>
+        <field name="master_ids" eval="[(4,ref('master_2'))]"/>
         <field name="duration">1.5</field>
     </record>
 
     <record id="service_3" model="my_service">
         <field name="name">Haircut</field>
         <field name="price">1500</field>
-        <field name="product_ids" ref="product_3"/>
-        <field name="master_ids" ref="master_3"/>
+        <field name="product_ids" eval="[(4,ref('product_3'))]"/>
+        <field name="master_ids" eval="[(4,ref('master_3'))]"/>
         <field name="duration">0.5</field>
     </record>
 </odoo>
