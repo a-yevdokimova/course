@@ -3,21 +3,21 @@
     <record id="master_1" model="master">
         <field name="name">Olivia</field>
         <field name="second_name">Wilson</field>
-        <field name="service_ids"  eval="[(4,ref('service_1')),(4,ref('service_2'))]"  />
         <field name="gender">female</field>
+        <field name="image_1920" type="base64" file="my_salon/static/img/download_4.jpeg"/>
     </record>
 
     <record id="master_2" model="master">
         <field name="name">Samantha</field>
         <field name="second_name">White</field>
-        <field name="service_ids" eval="[(4,ref('service_2'))]" />
         <field name="gender">female</field>
+        <field name="image_1920" type="base64" file="my_salon/static/img/download_5.jpeg"/>
     </record>
 
     <record id="master_3" model="master">
         <field name="name">John</field>
         <field name="second_name">Smith</field>
-        <field name="service_ids" ref="[(4,ref('service_3'))]" />
         <field name="gender">male</field>
+        <field name="image_1920" type="base64" file="my_salon/static/img/download_6.jpeg"/>
     </record>
 </odoo>

@@ -5,4 +5,4 @@ my_salon.access_appointment,access_appointment,my_salon.model_appointment,base.g
 my_salon.access_my_service,access_my_service,my_salon.model_my_service,base.group_user,1,1,1,1
 my_salon.access_product,access_product,my_salon.model_product,base.group_user,1,1,1,1
 my_salon.access_provider,access_provider,my_salon.model_provider,base.group_user,1,1,1,1
-
+my_salon.access_change_master_wizard,access_change_master_wizard,my_salon.model_change_master_wizard,base.group_user,1,1,1,1

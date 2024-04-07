@@ -3,21 +3,18 @@
     <record id="provider_1" model="provider">
         <field name="name">"BeautyLine Wholesale Supplies"</field>
         <field name="phone">380991234567</field>
-        <field name="product_ids" eval="[(4,ref('product_1'))]"/>
         <field name="address">123 Main Street, Cityville, State, ZIP Glamour Beauty Distributors</field>
     </record>
 
     <record id="provider_2" model="provider">
         <field name="name">"Glamour Beauty Distributors"</field>
         <field name="phone">380369876541</field>
-        <field name="product_ids" eval="[(4,ref('product_2'))]"/>
         <field name="address">456 Oak Avenue, Townsville, State, ZIP Serenity Spa Products</field>
     </record>
 
     <record id="provider_3" model="provider">
         <field name="name">"Serenity Spa Products"</field>
         <field name="phone">380500155895</field>
-        <field name="product_ids" eval="[(4,ref('product_3'))]"/>
         <field name="address">789 Maple Street, Villagetown, State, ZIP</field>
     </record>
 </odoo>
