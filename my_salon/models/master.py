@@ -14,6 +14,7 @@ class Master(models.Model):
     service_ids = fields.Many2many(comodel_name='my_service')
     image_1920 = fields.Image()
     avatar_128 = fields.Image(related='image_1920', max_width=128, max_height=128)
+    appointment_id = fields.One2many('appointment', 'master_id')
 
     def name_get(self):
         res = []

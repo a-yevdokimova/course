@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="report_master" model="ir.actions.report">
+        <field name="name">Master Details</field>
+        <field name="model">master</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">my_salon.report_master_template</field>
+        <field name="report_file">my_salon.report_master_template</field>
+        <field name="binding_model_id" ref="model_master"/>
+        <field name="binding_type">report</field>
+        <field name="binding_view_types">list,form</field>
+    </record>
+</odoo>

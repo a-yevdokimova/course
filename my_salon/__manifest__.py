@@ -21,10 +21,14 @@
         'views/appointment_views.xml',
         'views/product_views.xml',
         'views/provider_views.xml',
+        'views/res_company_views.xml',
+        'report/report_master_template.xml',
+        'report/report.xml',
 
     ],
 
     'demo': [
+        # 'demo/res_company_demo.xml',
         'demo/provider_demo.xml',
         'demo/product_demo.xml',
         'demo/master_demo.xml',
