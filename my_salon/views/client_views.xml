@@ -6,6 +6,12 @@
         <field name="model">client</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_view_client_visits" string="View Client Visits" type="object"
+                            class="oe_highlight"/>
+                    <button name="action_create_visits" string="Schedule a Visits" type="object"
+                            class="oe_highlight"/>
+                </header>
                 <field name="active" invisible="1"/>
                 <field name="avatar_128" invisible="1"/>
                 <sheet>

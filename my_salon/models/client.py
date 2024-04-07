@@ -47,3 +47,25 @@ class Client(models.Model):
             self.is_child = True
         else:
             self.is_child = False
+
+    def action_view_client_visits(self):
+        return {
+            'name': 'Client Visits',
+            'view_type': 'form',
+            'view_mode': 'tree,form',
+            'res_model': 'appointment',
+            'domain': [('client_id', '=', self.id)],
+            'type': 'ir.actions.act_window',
+            'context': {'search_default_client_id': self.id}
+        }
+
+    def action_create_visits(self):
+        self.ensure_one()
+        return {
+            'name': 'New Visits',
+            'type': 'ir.actions.act_window',
+            'res_model': 'appointment',
+            'view_mode': 'form',
+            'context': {'default_client_id': self.id},
+            'target': 'new'
+        }
