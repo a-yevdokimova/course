@@ -4,9 +4,23 @@ from datetime import date
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
+
 class Appointment(models.Model):
+    """
+        A model representing an appointment in a beauty salon.
+        Attributes:
+            _name (str): The technical name of the model.
+            _description (str): A brief description of the model.
+            visit_status (fields.Selection): Status of the appointment (Scheduled, Completed, Cancelled).
+            client_id (fields.Many2one): Reference to the client who made the appointment.
+            master_id (fields.Many2one): Reference to the salon master (employee) who will provide the service.
+            service_id (fields.Many2one): Reference to the service to be provided during the appointment.
+            start_time (fields.Datetime): The scheduled start time of the appointment.
+            end_time (fields.Datetime): The computed end time of the appointment based on the service duration.
+        """
+
     _name = "appointment"
-    _description ="Appointment Records"
+    _description = "Appointment Records"
 
     visit_status = fields.Selection([('scheduled', 'Scheduled'),
                                      ('completed', 'Completed'),
@@ -20,13 +34,20 @@ class Appointment(models.Model):
 
     @api.constrains('start_time', 'end_time')
     def _check_time_range(self):
+        """
+        Validates that the appointment's start time is before its end time.
+        Raises:
+        ValidationError: If the start time is not earlier than the end time.
+        """
         for record in self:
             if record.start_time >= record.end_time:
                 raise ValidationError("Start time must be earlier than end time!")
-    @api.depends('service_id','start_time')
+
+    @api.depends('service_id', 'start_time')
     def _compute_end_time(self):
+        """
+        Computes the end time of the appointment based on the service duration.
+        The end time is determined by adding the duration of the selected service to the start time.
+        """
         for rec in self:
             rec.end_time = rec.start_time + relativedelta(hours=rec.service_id.duration)
-
-
-
