@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_stock_picking_form" model="ir.ui.view">
+        <field name="name">stock.picking.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet//field[@name='picking_type_id']" position="after">
+                <field name="provider_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock_picking_action" model="ir.actions.act_window">
+        <field name="name">Stock Pickings</field>
+        <field name="res_model">stock.picking</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_stock_picking"
+              name="Stock Pickings"
+              parent="menu_service_root"
+              action="my_salon.stock_picking_action"
+              sequence="50"/>
+</odoo>

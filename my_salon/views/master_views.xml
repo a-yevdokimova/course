@@ -10,7 +10,7 @@
                 <sheet>
                     <widget name="web_ribbon" title="Archived" bg_color="bg-danger" invisible="active"/>
                     <field name="image_1920" widget="image" class="oe_avatar m-0"
-                           options="{'zoom': 'true', 'preview_image': 'avatar_128'}"/>
+                           options="{'zoom': true, 'preview_image': 'avatar_128'}"/>
                     <group>
                         <field name="ref"/>
                         <field name="name"/>
