@@ -1,5 +1,5 @@
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
+from odoo import fields, models
+
 class Product(models.Model):
     """
         Represents a product in the system.

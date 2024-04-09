@@ -1,5 +1,6 @@
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
+from odoo import fields, models
+
+
 class ResCompany(models.Model):
     """
         Extends the default Odoo Company model (`res.company`) to include social media contact information.
@@ -14,3 +15,4 @@ class ResCompany(models.Model):
 
     instagram = fields.Char()
     telegram = fields.Char()
+

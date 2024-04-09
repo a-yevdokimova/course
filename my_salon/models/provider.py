@@ -1,5 +1,5 @@
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
+from odoo import fields, models
+
 class Provider(models.Model):
     """
         Represents a provider or supplier in the system.
@@ -16,3 +16,4 @@ class Provider(models.Model):
     phone = fields.Char()
     address = fields.Text()
     product_ids = fields.Many2many(comodel_name='product')
+

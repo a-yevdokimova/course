@@ -1,5 +1,6 @@
-from odoo import api, fields, models
-from odoo.exceptions import ValidationError
+from odoo import fields, models
+
+
 class StockPicking(models.Model):
     """
         Extends the default Odoo Company model (`res.company`) to include social media contact information.
@@ -13,3 +14,5 @@ class StockPicking(models.Model):
     _inherit = 'stock.picking'
 
     provider_id = fields.Many2one('provider')
+
+
