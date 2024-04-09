@@ -15,3 +15,4 @@ class Product(models.Model):
     description = fields.Text()
     price = fields.Float()
     provider_ids = fields.Many2many(comodel_name='provider')
+    currency_id = fields.Many2one('res.currency', string="Currency")

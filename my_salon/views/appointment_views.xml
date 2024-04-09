@@ -19,7 +19,6 @@
                         <label for="start_time" string="Date appointment"/>
                         <div>
                             <field name="start_time" class="oe_inline"/>
-                            -
                             <field name="end_time" class="oe_inline"/>
                         </div>
 

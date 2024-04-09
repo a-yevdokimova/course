@@ -489,7 +489,7 @@ msgstr ""
 #. module: my_salon
 #: model_terms:ir.ui.view,arch_db:my_salon.view_client_form
 msgid "View Client Visits"
-msgstr ""Переглянути візити клієнта"
+msgstr "Переглянути візити клієнта"
 
 #. module: my_salon
 #: model:ir.model.fields,field_description:my_salon.field_appointment__visit_status

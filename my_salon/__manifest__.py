@@ -10,9 +10,9 @@
 
     'depends': ['base', 'mail', 'stock'],
     'data': [
+        'security/groups.xml',
         'security/ir.model.access.csv',
         'data/sequence.xml',
-        # 'wizard/change_master_wizard_views.xml',
         'views/menu_views.xml',
         'wizard/change_master_wizard_views.xml',
         'views/client_views.xml',
