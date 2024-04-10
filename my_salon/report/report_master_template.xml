@@ -3,7 +3,7 @@
     <template id="logo_template">
         <div>
             <div class="col-6">
-                <img t-att-scr="image_data_uri(user.company_id.logo)"
+                <img t-att-src="image_data_uri(user.company_id.logo)" style="max-height:45pt;max-width:90%"
                      alt="logo"/>
                 <p>
                     <t t-esc="user.company_id.name"/>

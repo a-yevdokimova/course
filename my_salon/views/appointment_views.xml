@@ -92,7 +92,7 @@
 
     <menuitem id="menu_appointment"
               name="Appointment"
-              parent="menu_service_root"
+              parent="menu_salon_root"
               action="action_appointment"/>
 
 </odoo>

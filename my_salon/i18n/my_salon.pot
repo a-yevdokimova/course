@@ -471,6 +471,11 @@ msgid "Start Time"
 msgstr ""
 
 #. module: my_salon
+#: model:ir.actions.act_window,name:my_salon.stock_picking_action
+#: model:ir.ui.menu,name:my_salon.menu_stock_picking
+msgid "Stock Pickings"
+
+#. module: my_salon
 #: model:ir.model.fields,field_description:my_salon.field_client__tag_ids
 msgid "Tags"
 msgstr ""
