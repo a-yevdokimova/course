@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError
 
 
@@ -15,21 +15,21 @@ class Client(models.Model):
     _inherit = 'mail.thread'
     _description = "Client Records"
 
-    name = fields.Char(string='Name', required=True, tracking=True)
-    second_name = fields.Char(string='Second Name', required=True,
+    name = fields.Char(required=True, tracking=True)
+    second_name = fields.Char(required=True,
                               tracking=True)
     image_1920 = fields.Image()
-    age = fields.Integer(string='Age', tracking=True)
-    is_child = fields.Boolean(string="Is Child ?", default=False,
+    age = fields.Integer(tracking=True)
+    is_child = fields.Boolean(default=False, tracking=True)
+    notes = fields.Text()
+    gender = fields.Selection([('male', 'Male'),
+                               ('female', 'Female'),
+                               ('others', 'Others')],
                               tracking=True)
-    notes = fields.Text(string="Notes")
-    gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('others', 'Others')],
-                              string="Gender",
-                              tracking=True)
-    capitalized_name = fields.Char(string='Capitalized Name', compute='_compute_capitalized_name',
+    capitalized_name = fields.Char(compute='_compute_capitalized_name',
                                    store=True)
     ref = fields.Char(string="Reference", default=lambda self: ('New'))
-    master_id = fields.Many2one('master', string="Masters")
+    master_id = fields.Many2one('master')
     active = fields.Boolean(default=True)
     avatar_128 = fields.Image(related='image_1920', max_width=128,
                               max_height=128)
@@ -56,7 +56,7 @@ class Client(models.Model):
         """
         for rec in self:
             if rec.is_child and rec.age == 0:
-                raise ValidationError(("Age has to be recorder !"))
+                raise ValidationError(_('Age has to be recorded!'))
 
     @api.depends('name')
     def _compute_capitalized_name(self):
@@ -106,4 +106,3 @@ class Client(models.Model):
             'context': {'default_client_id': self.id},
             'target': 'new'
         }
-

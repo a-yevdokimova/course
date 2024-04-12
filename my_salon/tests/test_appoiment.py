@@ -1,5 +1,5 @@
-from odoo.tests.common import TransactionCase
 from datetime import datetime
+from odoo.tests.common import TransactionCase
 from odoo.exceptions import ValidationError
 
 class TestAppointmentConstraints(TransactionCase):

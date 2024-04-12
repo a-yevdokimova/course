@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError
 from dateutil.relativedelta import relativedelta
 
@@ -33,7 +33,7 @@ class Appointment(models.Model):
         """
         for record in self:
             if record.start_time >= record.end_time:
-                raise ValidationError("Start time must be earlier than end time")
+                raise ValidationError(_("Start time must be earlier than end time"))
 
     @api.depends('service_id', 'start_time')
     def _compute_end_time(self):

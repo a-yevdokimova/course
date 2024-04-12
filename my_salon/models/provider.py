@@ -1,5 +1,6 @@
 from odoo import fields, models
 
+
 class Provider(models.Model):
     """
         Represents a provider or supplier in the system.
@@ -12,8 +13,7 @@ class Provider(models.Model):
 
     _name = "provider"
 
-    name = fields.Char(string='Name', required=True, tracking=True)
+    name = fields.Char(required=True, tracking=True)
     phone = fields.Char()
     address = fields.Text()
     product_ids = fields.Many2many(comodel_name='product')
-

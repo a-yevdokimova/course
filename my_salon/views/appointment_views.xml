@@ -21,21 +21,6 @@
                             <field name="start_time" class="oe_inline"/>
                             <field name="end_time" class="oe_inline"/>
                         </div>
-
-<!--                        <div class="oe_inline">-->
-<!--                            <strong>-->
-<!--                                Date appointment:-->
-<!--                            </strong>-->
-<!--                            <span>-->
-<!--                                <span>-->
-
-<!--                                </span>-->
-<!--                                - -->
-<!--                                <span>-->
-
-<!--                                </span>-->
-<!--                            </span>-->
-<!--                        </div>-->
                     </group>
                 </group>
             </form>
@@ -46,7 +31,7 @@
         <field name="name">appointment.tree</field>
         <field name="model">appointment</field>
         <field name="arch" type="xml">
-            <tree string="Appointment Tree View">
+            <tree>
                 <field name="client_id" optional="show"/>
                 <field name="master_id" optional="show"/>
                 <field name="service_id" optional="show"/>

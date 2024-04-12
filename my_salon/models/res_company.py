@@ -15,4 +15,3 @@ class ResCompany(models.Model):
 
     instagram = fields.Char()
     telegram = fields.Char()
-

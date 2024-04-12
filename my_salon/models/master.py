@@ -13,11 +13,12 @@ class Master(models.Model):
     _inherit = 'mail.thread'
     _description = "Master Records"
 
-    name = fields.Char(string='Name', required=True, tracking=True)
-    second_name = fields.Char(string='Second Name', required=True,
+    name = fields.Char(required=True, tracking=True)
+    second_name = fields.Char(required=True,
                               tracking=True)
-    gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('others', 'Others')],
-                              string="Gender",
+    gender = fields.Selection([('male', 'Male'),
+                               ('female', 'Female'),
+                               ('others', 'Others')],
                               tracking=True)
     ref = fields.Char(string="Reference", default=lambda self: ('New'))
     active = fields.Boolean(default=True)
@@ -38,4 +39,3 @@ class Master(models.Model):
         for rec in self:
             res.append((rec.id, f'{rec.ref} - {rec.name}'))
         return res
-
