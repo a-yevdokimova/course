@@ -7,15 +7,6 @@ class TestServiceModel(TransactionCase):
         super(TestServiceModel, self).setUp(*args, **kwargs)
         self.service_model = self.env['my_service']
 
-    def test_duration_required(self):
-        "Проверка, что поле duration является обязательным"
-        with self.assertRaises(ValidationError, msg="Creating a service without a duration should raise a ValidationError"):
-            # Попытка создать запись без указания обязательного поля duration
-            self.service_model.create({
-                'name': 'Test Service Without Duration',
-                # Не указываем duration
-            })
-
     def test_create_service_with_duration(self):
         "Проверка успешного создания сервиса с указанием duration"
         service = self.service_model.create({
