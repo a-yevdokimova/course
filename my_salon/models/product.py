@@ -1,5 +1,6 @@
 from odoo import fields, models
 
+
 class Product(models.Model):
     """
         Represents a product in the system.
@@ -11,7 +12,7 @@ class Product(models.Model):
 
     _name = "product"
 
-    name = fields.Char(string='Name', required=True, tracking=True)
+    name = fields.Char(required=True, tracking=True)
     description = fields.Text()
     price = fields.Float()
     provider_ids = fields.Many2many(comodel_name='provider')

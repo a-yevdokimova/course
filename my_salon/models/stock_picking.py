@@ -14,5 +14,3 @@ class StockPicking(models.Model):
     _inherit = 'stock.picking'
 
     provider_id = fields.Many2one('provider')
-
-

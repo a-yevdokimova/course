@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
-    <record id="company_1" model="res.company">
-        <field name="name">Beauty</field>
-        <field name="instagram">20</field>
-        <field name="telegram">male</field>
-        <field name="logo" type="base64" file="my_salon/static/img/download_1.jpeg"/>
-    </record>
-</odoo>

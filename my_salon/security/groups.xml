@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
-    <data noupdate="1">
-        <!-- Створення категорії для груп -->
-        <record id="module_category" model="ir.module.category">
-            <field name="name">My Salon</field>
-            <field name="description">Manage Salon</field>
-        </record>
+<odoo noupdate="1">
+    <!-- Створення категорії для груп -->
+    <record id="module_category" model="ir.module.category">
+        <field name="name">My Salon</field>
+        <field name="description">Manage Salon</field>
+    </record>
 
-        <!-- Група User -->
-        <record id="group_user" model="res.groups">
-            <field name="name">User</field>
-            <field name="category_id" ref="module_category"/>
-        </record>
+    <!-- Група User -->
+    <record id="group_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_category"/>
+    </record>
 
-        <!-- Група Admin -->
-        <record id="group_admin" model="res.groups">
-            <field name="name">Admin</field>
-            <field name="category_id" ref="module_category"/>
-            <field name="implied_ids" eval="[(4, ref('group_user'))]"/> <!-- Наслідує групу User -->
-        </record>
-    </data>
+    <!-- Група Admin -->
+    <record id="group_admin" model="res.groups">
+        <field name="name">Admin</field>
+        <field name="category_id" ref="module_category"/>
+        <field name="implied_ids" eval="[(4, ref('group_user'))]"/> <!-- Наслідує групу User -->
+    </record>
 </odoo>

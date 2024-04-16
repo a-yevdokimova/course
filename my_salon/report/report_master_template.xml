@@ -41,55 +41,55 @@
     <template id="content_master">
 
 
+        <div>
+            <h1 style="text-align: center;">
+                <span t-esc="doc.name"/>
+                <span t-esc="doc.second_name"/>
+            </h1>
             <div>
-                <h1 style="text-align: center;">
-                    <span t-esc="doc.name"/>
-                    <span t-esc="doc.second_name"/>
-                </h1>
-                <div>
-                    <table class="table-bordered"
-                           style="border: 1px solid black; border-collapse: collapse;"
-                           width="100%">
+                <table class="table-bordered"
+                       style="border: 1px solid black; border-collapse: collapse;"
+                       width="100%">
+                    <tr>
+                        <th>Client</th>
+                        <th>Service</th>
+                        <th>Date</th>
+                        <th>Visit's status</th>
+                    </tr>
+                    <t t-foreach="doc.appointment_id" t-as="appointment_id">
                         <tr>
-                            <th>Client</th>
-                            <th>Service</th>
-                            <th>Date</th>
-                            <th>Visit's status</th>
+                            <td>
+                                <t t-esc="appointment_id.client_id.name"/>
+                                <t t-esc="appointment_id.client_id.second_name"/>
+                            </td>
+                            <td>
+                                <t t-esc="appointment_id.service_id.name"/>
+                            </td>
+                            <td>
+                                <div>
+                                    <t t-esc="appointment_id.start_time.date()"/>
+                                </div>
+                                <div>
+                                    <t t-esc="appointment_id.start_time.time()"/>
+                                </div>
+                            </td>
+                            <td>
+                                <t t-esc="appointment_id.visit_status"/>
+                                <t t-if="appointment_id.visit_status=='scheduled'">
+                                    <span style="display: inline-block; width:20px; height:20px; background-color: #F4B400;"/>
+                                </t>
+                                <t t-elif="appointment_id.visit_status=='completed'">
+                                    <span style="display: inline-block; width:20px; height:20px; background-color: #0F9D58;"/>
+                                </t>
+                                <t t-elif="appointment_id.visit_status=='cancelled'">
+                                    <span style="display: inline-block; width:20px; height:20px; background-color: #F4B400;"/>
+                                </t>
+                            </td>
                         </tr>
-                        <t t-foreach="doc.appointment_id" t-as="appointment_id">
-                            <tr>
-                                <td>
-                                    <t t-esc="appointment_id.client_id.name"/>
-                                    <t t-esc="appointment_id.client_id.second_name"/>
-                                </td>
-                                <td>
-                                    <t t-esc="appointment_id.service_id.name"/>
-                                </td>
-                                <td>
-                                    <div>
-                                        <t t-esc="appointment_id.start_time.date()"/>
-                                    </div>
-                                    <div>
-                                        <t t-esc="appointment_id.start_time.time()"/>
-                                    </div>
-                                </td>
-                                <td>
-                                    <t t-esc="appointment_id.visit_status"/>
-                                    <t t-if="appointment_id.visit_status=='scheduled'">
-                                        <span style="display: inline-block; width:20px; height:20px; background-color: #F4B400;"/>
-                                    </t>
-                                    <t t-elif="appointment_id.visit_status=='completed'">
-                                        <span style="display: inline-block; width:20px; height:20px; background-color: #0F9D58;"/>
-                                    </t>
-                                    <t t-elif="appointment_id.visit_status=='cancelled'">
-                                        <span style="display: inline-block; width:20px; height:20px; background-color: #F4B400;"/>
-                                    </t>
-                                </td>
-                            </tr>
-                        </t>
-                    </table>
-                </div>
+                    </t>
+                </table>
             </div>
+        </div>
     </template>
 
     <template id='report_master_template'>
@@ -98,16 +98,15 @@
                 <div class="header">
                     <t t-call="my_salon.logo_template"/>
                 </div>
-
-                <div class="page">
-                    <t t-call="my_salon.content_master"/>
-                </div>
-
+                <t t-call="web.basic_layout">
+                    <div class="page">
+                        <t t-call="my_salon.content_master"/>
+                    </div>
+                </t>
                 <t t-call="my_salon.print_date_time"/>
-
-
             </t>
         </t>
     </template>
+
 </odoo>
-<!--                            <t t-call="web.basic_layout">-->
+

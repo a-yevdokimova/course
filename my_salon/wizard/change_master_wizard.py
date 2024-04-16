@@ -11,4 +11,3 @@ class ChangeMasterWizard(models.TransientModel):
     def action_change(self):
         self.ensure_one()
         self.client_id.master_id = self.master_id.id
-
